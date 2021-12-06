@@ -29,3 +29,12 @@ exports.listMovies = async () => {
         console.log(e);
     }
 };
+
+
+exports.deleteMovies = async (movieObj) => {
+    try{
+        await Movie.deleteOne({ 'title': movieObj.title });
+    }catch(e){
+        console.log(e)
+    }
+};
